@@ -4,23 +4,9 @@
 
 <?php
 //Part 1
-//
-//    Define an array called $animals, which contains panda, alpaca, and boa.
-//    Write a function that sorts and prints the array, as shown below. Print $animals using your function.
-//    Write a function that takes a string parameter and adds it to your array,
-// unless the value is already in the array.
-// The function should be case-insensitive. Test your function.
-//
-//Your output should look like this...
-//
-//alpaca boa panda
-//adding goat...
-//alpaca boa goat panda
-//adding Boa...
-//alpaca boa goat panda
 
 //define array
-$animals = array( “panda”, “alpaca”, “boa”);
+$animals = array( "panda", "alpaca", "boa");
 
 //define function that sorts array and prints out values
 function sortAndPrint($array)
@@ -29,7 +15,7 @@ function sortAndPrint($array)
 
     foreach ( $array as $val )
     {
-        echo "<p>$val </p>";
+        echo "$val ";
     }
 
 }
@@ -37,22 +23,27 @@ function sortAndPrint($array)
 //function that takes a string parameter and adds it to the array
 function addArrayElement($string, $array)
 {
-   $string = strtolower ( $string );
-    foreach($array as $val)
-        if($val == $string)
-        {
-            echo"$string is already in the array";
-        }
-        else
-        {
-            $array[] = $string;
-        }
+    //set to lowercase
+   $string = strtolower ($string);
+
+   //if string is in array print out error message
+    if (in_array($string, $array)) {
+        echo "<p>$string is already in this array</p>";
+    }
+    //if string is not in array, print out "adding"d and add it to array, then re-sort and re-print array
+    else{
+        echo"<p>adding $string... </p>";
+        $array[] = $string;
+        sortAndPrint($array);
+
+    }
 
 }
 
 sortAndPrint($animals);
 addArrayElement("boa", $animals);
 addArrayElement("bunny", $animals);
+//sortAndPrint($animals);
 
 //Part II
 $cupcake = array( "grasshopper" =>  "The Grasshopper",
@@ -76,5 +67,8 @@ $cupcake = array( "grasshopper" =>  "The Grasshopper",
 //
 //Submission
 //
-//After each problem, commit your code to GitHub. You should have a minimum of 5 commits. Submit a) the URL of your PHP script and b) the URL of your GitHub repository.
+//After each problem, commit your code to GitHub.
+// You should have a minimum of 5 commits.
+// Submit a) the URL of your PHP script and
+// b) the URL of your GitHub repository.
 ?>

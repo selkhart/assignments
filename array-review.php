@@ -48,6 +48,8 @@ echo "<p>Part 2:</p>";
 //sortAndPrint($animals);
 
 //Part II
+
+//create associative array
 $cupcake = array( "grasshopper" =>  "The Grasshopper",
                   "maple"       =>  "Whiskey Maple Bacon",
                   "carrot"      =>  "Carrot Walnut",
@@ -56,25 +58,10 @@ $cupcake = array( "grasshopper" =>  "The Grasshopper",
                   "lemon"       =>  "Lemon Drop",
                   "tiramisu"    =>  "Tiramisu",   );
 
+//loop through array and make into checkboxes. set each key as 'value' attribute and each value as checkbox label
 foreach($cupcake as $key => $value)
 {
     echo"<input type=\"checkbox\" name=\"cupcake[]\" value=\"$key\">$value<br>";
 }
 
-//
-//    Use a loop to display the cupcake options as a set of checkboxes:
-//    cupcakes.png
-//    Accessibility score: Low Click to improve
-//
-//The source code should show the key for each item (grasshopper, maple, carrot) as the value of the checkbox. For example:
-//
-//<input type='
-//}checkbox" name="flavors[]" value="grasshopper"> The Grasshopper<br>
-//
-//Submission
-//
-//After each problem, commit your code to GitHub.
-// You should have a minimum of 5 commits.
-// Submit a) the URL of your PHP script and
-// b) the URL of your GitHub repository.
 ?>

@@ -36,13 +36,15 @@ function addArrayElement($string, $array)
         $array[] = $string;
         sortAndPrint($array);
 
+
     }
 
 }
-
+echo "<p>Part 1:</p>";
 sortAndPrint($animals);
 addArrayElement("boa", $animals);
 addArrayElement("bunny", $animals);
+echo "<p>Part 2:</p>";
 //sortAndPrint($animals);
 
 //Part II
@@ -54,6 +56,10 @@ $cupcake = array( "grasshopper" =>  "The Grasshopper",
                   "lemon"       =>  "Lemon Drop",
                   "tiramisu"    =>  "Tiramisu",   );
 
+foreach($cupcake as $key => $value)
+{
+    echo"<input type=\"checkbox\" name=\"cupcake[]\" value=\"$key\">$value<br>";
+}
 
 //
 //    Use a loop to display the cupcake options as a set of checkboxes:

@@ -22,25 +22,48 @@
 //define array
 $animals = array( “panda”, “alpaca”, “boa”);
 
-function sortAndPrint()
+//define function that sorts array and prints out values
+function sortAndPrint($array)
 {
-    sort($animals);
-    print_r($animals);
+    sort($array);
+
+    foreach ( $array as $val )
+    {
+        echo "<p>$val </p>";
+    }
+
 }
 
-sortAndPrint();
+//function that takes a string parameter and adds it to the array
+function addArrayElement($string, $array)
+{
+   $string = strtolower ( $string );
+    foreach($array as $val)
+        if($val == $string)
+        {
+            echo"$string is already in the array";
+        }
+        else
+        {
+            $array[] = $string;
+        }
+
+}
+
+sortAndPrint($animals);
+addArrayElement("boa", $animals);
+addArrayElement("bunny", $animals);
 
 //Part II
-//
-//    Define an associative array containing key-value pairs for various cupcake flavors:
-//
-//    grasshopper - The Grasshopper
-//    maple - Whiskey Maple Bacon
-//    carrot - Carrot Walnut
-//    caramel - Salted Caramel Cupcake
-//    velvet - Red Velvet
-//    lemon - Lemon Drop
-//    tiramisu - Tiramisu
+$cupcake = array( "grasshopper" =>  "The Grasshopper",
+                  "maple"       =>  "Whiskey Maple Bacon",
+                  "carrot"      =>  "Carrot Walnut",
+                  "caramel"     =>  "Salted Caramel Cupcake",
+                  "velvet"      =>  "Red Velvet",
+                  "lemon"       =>  "Lemon Drop",
+                  "tiramisu"    =>  "Tiramisu",   );
+
+
 //
 //    Use a loop to display the cupcake options as a set of checkboxes:
 //    cupcakes.png
@@ -48,7 +71,8 @@ sortAndPrint();
 //
 //The source code should show the key for each item (grasshopper, maple, carrot) as the value of the checkbox. For example:
 //
-//<input type="checkbox" name="flavors[]" value="grasshopper"> The Grasshopper<br>
+//<input type='
+//}checkbox" name="flavors[]" value="grasshopper"> The Grasshopper<br>
 //
 //Submission
 //
